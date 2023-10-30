@@ -1,0 +1,11 @@
+<div>
+  <table>
+    <tr *ngFor="let i of cocktails; let in = index">
+      <td ><a [routerLink]="['/details',i.strDrink]"><img src="{{i.strDrinkThumb}}" width="100px"></a></td>
+      <td (click)="getDetails(in,i)" >{{i.strDrink}}</td>
+    </tr>
+  </table>
+</div>
+<div *ngIf="showValues">
+  <app-cocktaildetails [details]="cocktaildetails"></app-cocktaildetails>
+</div>
